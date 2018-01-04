@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="Collidable.cpp">
+      <Filter>Source\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>Source\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject.cpp">
+      <Filter>Source\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="GameThreadUnsafeScope.cpp">
+      <Filter>Source\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Listener.cpp">
+      <Filter>Source\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Messenger.cpp">
+      <Filter>Source\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="MessengerSystem.cpp">
+      <Filter>Source\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Resource.cpp">
+      <Filter>Source\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Resources.cpp">
+      <Filter>Source\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="State.cpp">
+      <Filter>Source\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="StateMain.cpp">
+      <Filter>Source\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="World.cpp">
+      <Filter>Source\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="MissileObject.cpp">
+      <Filter>Source\MissileCommand</Filter>
+    </ClCompile>
+    <ClCompile Include="MissileCommandGame.cpp">
+      <Filter>Source\MissileCommand</Filter>
+    </ClCompile>
+    <ClCompile Include="MissileCommandWorld.cpp">
+      <Filter>Source\MissileCommand</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CityObject.h">
+      <Filter>Include\MissileCommand</Filter>
+    </ClInclude>
+    <ClInclude Include="Collidable.h">
+      <Filter>Include\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Controller.h">
+      <Filter>Include\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Include\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject.h">
+      <Filter>Include\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="GameThreadUnsafeScope.h">
+      <Filter>Include\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="GlobalDefines.h">
+      <Filter>Include\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Listener.h">
+      <Filter>Include\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Message.h">
+      <Filter>Include\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Messenger.h">
+      <Filter>Include\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="MessengerSystem.h">
+      <Filter>Include\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="ExplosionObject.h">
+      <Filter>Include\MissileCommand</Filter>
+    </ClInclude>
+    <ClInclude Include="MissileCommandGame.h">
+      <Filter>Include\MissileCommand</Filter>
+    </ClInclude>
+    <ClInclude Include="MissileCommandWorld.h">
+      <Filter>Include\MissileCommand</Filter>
+    </ClInclude>
+    <ClInclude Include="MissileObject.h">
+      <Filter>Include\MissileCommand</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>Include\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Resources.h">
+      <Filter>Include\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="State.h">
+      <Filter>Include\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="StateMain.h">
+      <Filter>Include\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="World.h">
+      <Filter>Include\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="TurretObject.h">
+      <Filter>Include\MissileCommand</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Include">
+      <UniqueIdentifier>{8ede326b-89be-4cba-98aa-0abd6b5c0dba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source">
+      <UniqueIdentifier>{32f14360-0bca-4b93-9e24-54567db22f12}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\Engine">
+      <UniqueIdentifier>{61541c34-912a-4f34-9f9d-a6dbe1195270}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source\MissileCommand">
+      <UniqueIdentifier>{74a58b57-4ec3-43ea-b8fb-c452b503d406}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\Engine">
+      <UniqueIdentifier>{c4579187-79ae-4033-91f5-90c7bcadf859}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Include\MissileCommand">
+      <UniqueIdentifier>{29790241-9964-4e7b-84a7-9010e249c4ef}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources.inl">
+      <Filter>Include\Engine</Filter>
+    </None>
+  </ItemGroup>
+</Project>
