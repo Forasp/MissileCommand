@@ -5,7 +5,13 @@
 
 void Collidable::CheckCollision(Collidable* _Collidable)
 {
-	if (mSizePtr == nullptr || mPositionPtr == nullptr || _Collidable->mSizePtr == nullptr || _Collidable->mPositionPtr == nullptr || _Collidable == this)
+	if (_Collidable == nullptr || mSizePtr == nullptr || mPositionPtr == nullptr || _Collidable->mSizePtr == nullptr || _Collidable->mPositionPtr == nullptr || _Collidable == this)
+	{
+		return;
+	}
+
+	// Ignore colliders with mismatching masks
+	if (!(_Collidable->mCollisionLayerMask & mCollisionLayerMask))
 	{
 		return;
 	}
@@ -56,8 +62,21 @@ void Collidable::ReadMessage(Message* _Message)
 	}
 	else if (_Message->GetMessageType() == MESSAGE_TYPE_COLLISION_PTR)
 	{
-		Collidable* CollidablePtr = dynamic_cast<Collidable*>(static_cast<GameObject*>(_Message->GetMessageVoidPtr()));
-		CheckCollision(CollidablePtr);
+		if (_Message->GetMessageVoidPtr() != nullptr)
+		{
+			try
+			{
+				Collidable* CollidablePtr = dynamic_cast<Collidable*>(static_cast<GameObject*>(_Message->GetMessageVoidPtr()));
+				CheckCollision(CollidablePtr);
+			}
+			catch (std::string err)
+			{
+				// This try/catch is pure sin. We need to address the possibility that pointers can be deleted while they're referenced in a message.
+				// Suggestion would be to eliminate the void pointer, and implement some other identifier of an object, such as a the method we use to find assets in the original engine
+				// (search for object through all lists by a unique identifier such as a string)
+				// Alternatively, we can couple the messaging system to collidable and any other object type we need to pass, but I'd like to avoid that.
+			}
+		}
 	}
 }
 

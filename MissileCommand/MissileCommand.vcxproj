@@ -166,7 +166,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CityObject.cpp" />
     <ClCompile Include="Collidable.cpp" />
+    <ClCompile Include="ExplosionObject.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="GameThreadUnsafeScope.cpp" />
@@ -174,6 +176,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Messenger.cpp" />
     <ClCompile Include="MessengerSystem.cpp" />
+    <ClCompile Include="MissileCommandBackground.cpp" />
     <ClCompile Include="MissileCommandGame.cpp" />
     <ClCompile Include="MissileCommandWorld.cpp" />
     <ClCompile Include="MissileObject.cpp" />
@@ -181,6 +184,7 @@
     <ClCompile Include="Resources.cpp" />
     <ClCompile Include="State.cpp" />
     <ClCompile Include="StateMain.cpp" />
+    <ClCompile Include="TurretObject.cpp" />
     <ClCompile Include="World.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -196,6 +200,7 @@
     <ClInclude Include="Listener.h" />
     <ClInclude Include="Message.h" />
     <ClInclude Include="Messenger.h" />
+    <ClInclude Include="MissileCommandBackground.h" />
     <ClInclude Include="MissileCommandGame.h" />
     <ClInclude Include="MissileCommandWorld.h" />
     <ClInclude Include="MissileObject.h" />

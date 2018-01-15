@@ -12,6 +12,8 @@ GameObject::~GameObject()
 		mGame->RemoveObjectFromRenderer(this, mLayer);
 		mAddedToRenderer = false;
 	}
+
+	sf::sleep(sf::milliseconds(10));
 }
 
 void GameObject::RenderTick(sf::RenderWindow* _RenderWindow)

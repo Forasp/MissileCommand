@@ -16,6 +16,7 @@
 #define RESTART_LEVEL 2
 #define TICK_EVENT 3
 #define EXPLODE_MISSILE 4
+#define END_EXPLOSION 5
 
 class Message
 {
@@ -66,6 +67,8 @@ public:
 	// New, not fully tested. TODO - Add new constructors for any combo with this parameter.
 	Message(int _MessageType, void* _VoidPtr, bool _Consumable = false) :
 		mMessageType(_MessageType), mMessageVoidPtr(_VoidPtr), mConsumable(_Consumable), mConsumed(false) {}
+	Message(int _MessageType, double _MessageDouble, void* _VoidPtr, bool _Consumable = false) :
+		mMessageType(_MessageType), mMessageDouble(_MessageDouble), mMessageVoidPtr(_VoidPtr), mConsumable(_Consumable), mConsumed(false) {}
 	Message(int _MessageType, std::pair<double, double> _MessageDoublePair, void* _VoidPtr, bool _Consumable = false) :
 		mMessageType(_MessageType), mMessageDoublePair(_MessageDoublePair), mMessageVoidPtr(_VoidPtr), mConsumable(_Consumable), mConsumed(false) {}
 	Message(int _MessageType, double _MessageDouble, std::pair<double, double> _MessageDoublePair, void* _VoidPtr, bool _Consumable = false) :

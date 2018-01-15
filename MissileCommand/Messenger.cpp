@@ -40,12 +40,20 @@ void Messenger::QueueMessage(std::shared_ptr<Message> _Message)
 {
 	// lock the queue when pushing or popping.
 	mWritingMessageLock.lock();
-	mMessageQueue.push(std::move(_Message));
+	mInMessageQueue.push(std::move(_Message));
 	mWritingMessageLock.unlock();
 }
 
 void Messenger::TickMessenger()
 {
+	while (mInMessageQueue.size() > 0)
+	{
+		mWritingMessageLock.lock();
+		mMessageQueue.push(mInMessageQueue.front());
+		mInMessageQueue.pop();
+		mWritingMessageLock.unlock();
+	}
+
 	while (mMessageQueue.size() > 0)
 	{
 		for (Listener* i : mListeners)
@@ -53,9 +61,6 @@ void Messenger::TickMessenger()
 			i->ReadMessage(mMessageQueue.front().get());
 		}
 		
-		// lock the queue when pushing or popping.
-		mWritingMessageLock.lock();
 		mMessageQueue.pop();
-		mWritingMessageLock.unlock();
 	}
 }

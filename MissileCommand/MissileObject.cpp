@@ -8,7 +8,8 @@
 
 void MissileObject::RenderTick(sf::RenderWindow* _RenderWindow)
 {
-	mRenderShape.setRotation(mRotation - 90);
+	mRenderShape.setScale(sf::Vector2f(mSize.first, mSize.second));
+	mRenderShape.setRotation(mRotation);
 	mRenderShape.setPosition(mPosition.first, mPosition.second);
 	_RenderWindow->draw(mRenderShape);
 }
@@ -16,6 +17,14 @@ void MissileObject::RenderTick(sf::RenderWindow* _RenderWindow)
 void MissileObject::Tick(sf::Time _DeltaTime)
 {
 	GameObject::Tick(_DeltaTime);
+	double PercentageOfTravelTime = _DeltaTime.asSeconds() / mTravelTime;
+	mPosition.first = mPosition.first + ((mEndPosition.first - mStartPosition.first) * PercentageOfTravelTime);
+	mPosition.second = mPosition.second + ((mEndPosition.second - mStartPosition.second) * PercentageOfTravelTime);
+	
+	if (abs(mEndPosition.first - mStartPosition.first) < abs(mPosition.first - mStartPosition.first))
+	{
+		mGame->QueueMessage("GameEvents", std::make_unique<Message>(Message(MESSAGE_TYPE_COLLISION_EVENT, (double)EXPLODE_MISSILE, mPosition, dynamic_cast<GameObject*>(this))));
+	}
 }
 
 void MissileObject::Collide(Collidable* _Collidable)
@@ -25,16 +34,16 @@ void MissileObject::Collide(Collidable* _Collidable)
 
 void MissileObject::InitializeGameObject()
 {
-	mRenderShape = sf::CircleShape(2, 4);
-	mRenderShape.setFillColor(sf::Color(0, 255, 255, 255));
-	mRenderShape.setOutlineColor(sf::Color(0, 255, 255, 255));
-	mRenderShape.setOutlineThickness(2);
-	mRenderShape.setOrigin(2, 2);
-	mRenderShape.setScale(1, 3);
-	mLayer = LAYER_GAME_TOP;
+	mRenderShape = sf::RectangleShape(sf::Vector2f(1, 1));
+	mRenderShape.setFillColor(sf::Color(255, 0, 0, 255));
+	mRenderShape.setOrigin(0.5f, 0.5f);
+	mRenderShape.setScale(1, 1);
+	mLayer = LAYER_GAME_SHIP;
 	mGame->AddObjectToRenderer(this, mLayer);
+	mAddedToRenderer = true;
 	CreateCollider(&mPosition, &mSize, &mRotation);
-	mSize = std::pair<double, double>(4, 4);
+	mSize = std::pair<double, double>(32, 8);
+	mPosition = mStartPosition;
 }
 
 

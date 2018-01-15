@@ -159,11 +159,11 @@ void Game::RenderingThread()
 		mRenderWindow->clear(sf::Color(0,0,0,255));
 
 		// Tick Rendering of all objects needing rendering
-		for (std::vector<GameObject*> goVector : mObjectsToRender)
+		for (int i = 0; i < NUMBER_OF_LAYERS; i++)
 		{
-			for (GameObject* go : goVector)
+			for (int j = 0; j < mObjectsToRenderSize[i]; j++)
 			{
-				go->RenderTick(mRenderWindow);
+				mObjectsToRender[i][j]->RenderTick(mRenderWindow);
 			}
 		}
 
@@ -286,6 +286,7 @@ void Game::AddObjectToRenderer(GameObject* _GameObject, int _Layer)
 	}
 
 	mObjectsToRender[_Layer].push_back(_GameObject);
+	mObjectsToRenderSize[_Layer]++;
 }
 
 void Game::RemoveObjectFromRenderer(GameObject* _GameObject, int _Layer)
@@ -297,6 +298,7 @@ void Game::RemoveObjectFromRenderer(GameObject* _GameObject, int _Layer)
 		if (_GameObject == mObjectsToRender[_Layer][i])
 		{
 			mObjectsToRender[_Layer].erase(mObjectsToRender[_Layer].begin()+i);
+			mObjectsToRenderSize[_Layer]--;
 			return;
 		}
 	}
@@ -314,6 +316,12 @@ void Game::InitializeGame(sf::RenderWindow* _RenderWindow)
 	mBlockAllThreads = false;
 	mRenderWindow = _RenderWindow;
 	mObjectsToRender.resize(NUMBER_OF_LAYERS);
+	mObjectsToRenderSize.resize(NUMBER_OF_LAYERS);
+	
+	for (int i = 0; i < NUMBER_OF_LAYERS; i++)
+	{
+		mObjectsToRenderSize[i] = 0;
+	}
 
 	mCurrentWorld = GetNewWorld();
 

@@ -79,4 +79,5 @@ protected:
 	virtual void CheckControls(int _OverrideControl = -1);
 
 	std::vector<std::vector<GameObject*>> mObjectsToRender;
+	std::vector<int> mObjectsToRenderSize;
 };

@@ -32,6 +32,9 @@ public:
 	virtual void HandleMessage(Message* _Message) {}
 	void ReadMessage(Message* _Message);
 	virtual void SetPosition(std::pair<double, double> _Position) { mPosition = _Position; }
+	virtual void SetPosition(double _PositionX, double _PositionY) { mPosition = std::pair<double, double>(_PositionX, _PositionY); }
+	virtual void SetSize(std::pair<double, double> _Size) { mSize = _Size; }
+	virtual void SetSize(double _SizeX, double _SizeY) { mSize = std::pair<double, double>(_SizeX, _SizeY); }
 	virtual void SetRotation(double _Rotation) { mRotation = _Rotation; }
 	virtual void AddVelocity(std::pair<double, double> _Velocity) 
 	{ 

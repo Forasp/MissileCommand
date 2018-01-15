@@ -49,6 +49,18 @@
     <ClCompile Include="MissileCommandWorld.cpp">
       <Filter>Source\MissileCommand</Filter>
     </ClCompile>
+    <ClCompile Include="MissileCommandBackground.cpp">
+      <Filter>Source\MissileCommand</Filter>
+    </ClCompile>
+    <ClCompile Include="CityObject.cpp">
+      <Filter>Source\MissileCommand</Filter>
+    </ClCompile>
+    <ClCompile Include="TurretObject.cpp">
+      <Filter>Source\MissileCommand</Filter>
+    </ClCompile>
+    <ClCompile Include="ExplosionObject.cpp">
+      <Filter>Source\MissileCommand</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CityObject.h">
@@ -112,6 +124,9 @@
       <Filter>Include\Engine</Filter>
     </ClInclude>
     <ClInclude Include="TurretObject.h">
+      <Filter>Include\MissileCommand</Filter>
+    </ClInclude>
+    <ClInclude Include="MissileCommandBackground.h">
       <Filter>Include\MissileCommand</Filter>
     </ClInclude>
   </ItemGroup>

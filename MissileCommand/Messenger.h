@@ -17,5 +17,6 @@ public:
 protected:
 	std::vector<Listener*> mListeners;
 	std::queue<std::shared_ptr<Message>> mMessageQueue;
+	std::queue<std::shared_ptr<Message>> mInMessageQueue;
 	std::mutex mWritingMessageLock;
 };

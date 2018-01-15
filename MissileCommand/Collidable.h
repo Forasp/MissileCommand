@@ -4,6 +4,10 @@
 #include "SFML/Graphics/Sprite.hpp"
 #include <math.h>
 
+#define COLLISION_LAYER_1	1u
+#define COLLISION_LAYER_2   2u
+#define COLLISION_LAYER_3	4u
+
 class Message;
 
 class Collidable : public virtual Listener
@@ -13,6 +17,7 @@ public:
 		mPositionPtr = nullptr;
 		mSizePtr = nullptr;
 		mRotationPtr = nullptr;
+		mCollisionLayerMask = 0u;
 	}
 
 	virtual void Collide(Collidable* _Collidable) = 0;
@@ -35,6 +40,8 @@ public:
 	bool mCollisionAreaM[8][8];
 	bool mCollisionAreaS[16][16];
 	bool mCollisionAreaXS[32][32];
+
+	uint64_t mCollisionLayerMask;
 
 
 };

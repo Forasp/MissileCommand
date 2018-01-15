@@ -8,8 +8,12 @@ int main()
 {
 	// Create window instance
 	sf::RenderWindow WindowInstance(sf::VideoMode(sf::VideoMode::getDesktopMode().width, sf::VideoMode::getDesktopMode().height), "MissileCommand", sf::Style::None);
-	WindowInstance.setView(sf::View(sf::Vector2f(sf::VideoMode::getDesktopMode().width / 2, sf::VideoMode::getDesktopMode().height / 2), sf::Vector2f(sf::VideoMode::getDesktopMode().width, sf::VideoMode::getDesktopMode().height)));
+	WindowInstance.setView(sf::View(sf::Vector2f(0, 0), sf::Vector2f(sf::VideoMode::getDesktopMode().width, sf::VideoMode::getDesktopMode().height)));
 	WindowInstance.setPosition(sf::Vector2i(0, 0));
+
+	sf::View TestView = WindowInstance.getView();
+	TestView.setCenter(sf::Vector2f(sf::VideoMode::getDesktopMode().width / 2, sf::VideoMode::getDesktopMode().height / 2));
+	WindowInstance.setView(TestView);
 
 	WindowInstance.setFramerateLimit(60);
 
