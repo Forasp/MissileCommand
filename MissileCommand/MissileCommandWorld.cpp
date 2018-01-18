@@ -34,6 +34,9 @@ void MissileCommandWorld::Initialize()
 	mBackground->SetSize(sf::VideoMode::getDesktopMode().width, sf::VideoMode::getDesktopMode().height);
 
 	AttachToMessenger(mGame->GetMessenger("MouseEvents"));
+
+	mTimeBetweenMissiles = 3.0;
+	mTimeSinceLastMissile = 0;
 }
 
 MissileCommandWorld::~MissileCommandWorld()
@@ -84,6 +87,34 @@ void MissileCommandWorld::Tick(sf::Time _DeltaTime)
 {
 	// render Background
 	mBackground->Tick(_DeltaTime);
+
+	mTimeSinceLastMissile += _DeltaTime.asSeconds();
+
+	if (mTimeSinceLastMissile > mTimeBetweenMissiles)
+	{
+		// Spawn Missile with random city target, and random starting location.
+		std::pair<double, double> ObjectPosition = std::pair<double, double>((double)(rand() % (int)(sf::VideoMode::getDesktopMode().width * 1.5)) - sf::VideoMode::getDesktopMode().width / 4.0,
+																			  0.0 - (double)(rand() % (sf::VideoMode::getDesktopMode().height / 10)));// Random Location
+		int IndexOfCity = rand() % 4;
+		std::pair<double, double> DestPosition = std::pair<double, double>(mCities[IndexOfCity]->GetPosition().first, mCities[IndexOfCity]->GetPosition().second);// Random City's location 
+		std::pair<double, double> NormalizedUnitVector;
+
+		// Normalize difference
+		double TotalDistance = abs(ObjectPosition.first - DestPosition.first) + abs(ObjectPosition.second - DestPosition.second);
+		NormalizedUnitVector.first = (ObjectPosition.first - DestPosition.first) / TotalDistance;
+		NormalizedUnitVector.second = (ObjectPosition.second - DestPosition.second) / TotalDistance;
+
+		double Rotation = atan2(NormalizedUnitVector.second, NormalizedUnitVector.first) * 180.0 / 3.141592;
+		std::shared_ptr<MissileObject> NewMissile = std::make_shared<MissileObject>(mGame, mTimeBetweenMissiles * 2.0, ObjectPosition, DestPosition);
+		NewMissile->mCollisionLayerMask = COLLISION_LAYER_1;
+		NewMissile->SetRotation(Rotation);
+		mInboundMissilesMutex.lock();
+		mInboundMissiles.push_back(NewMissile);
+		mInboundMissilesMutex.unlock();
+
+		mTimeSinceLastMissile = 0.0;
+		mTimeBetweenMissiles *= 0.98;
+	}
 
 	// Render Cities
 	for (int i = 0; i < 4; i++)
@@ -223,6 +254,11 @@ void MissileCommandWorld::ReadMessage(Message* _Message)
 					{
 						// Remove this child and create an explosion here.
 						GameThreadUnsafeScope ScopeLock(mGame);
+						std::shared_ptr<ExplosionObject> NewExplosion = std::make_shared<ExplosionObject>(mGame, mInboundMissiles[i]->GetPosition());
+						NewExplosion->mCollisionLayerMask = COLLISION_LAYER_1;
+						mExplosionsMutex.lock();
+						mExplosions.push_back(NewExplosion);
+						mExplosionsMutex.unlock();
 						mInboundMissilesMutex.lock();
 						mInboundMissiles.erase(mInboundMissiles.begin() + i);
 						mInboundMissilesMutex.unlock();

@@ -1,9 +1,16 @@
 ﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(387,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (Fallen_Forever.vcxproj).  This can lead to incorrect clean and rebuild behavior.
-  MissileCommandBackground.cpp
-c:\users\tim powell\source\repos\missilecommand\missilecommand\missilecommandbackground.cpp(13): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-c:\users\tim powell\source\repos\missilecommand\missilecommand\missilecommandbackground.cpp(14): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-c:\users\tim powell\source\repos\missilecommand\missilecommand\missilecommandbackground.cpp(15): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-c:\users\tim powell\source\repos\missilecommand\missilecommand\missilecommandbackground.cpp(20): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-c:\users\tim powell\source\repos\missilecommand\missilecommand\missilecommandbackground.cpp(21): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-c:\users\tim powell\source\repos\missilecommand\missilecommand\missilecommandbackground.cpp(22): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  MissileCommandWorld.cpp
+c:\users\tim powell\source\repos\missilecommand\missilecommand\missilecommandworld.cpp(65): warning C4018: '<': signed/unsigned mismatch
+c:\users\tim powell\source\repos\missilecommand\missilecommand\missilecommandworld.cpp(71): warning C4018: '<': signed/unsigned mismatch
+c:\users\tim powell\source\repos\missilecommand\missilecommand\missilecommandworld.cpp(77): warning C4018: '<': signed/unsigned mismatch
+c:\users\tim powell\source\repos\missilecommand\missilecommand\missilecommandworld.cpp(130): warning C4018: '<': signed/unsigned mismatch
+c:\users\tim powell\source\repos\missilecommand\missilecommand\missilecommandworld.cpp(138): warning C4018: '<': signed/unsigned mismatch
+c:\users\tim powell\source\repos\missilecommand\missilecommand\missilecommandworld.cpp(146): warning C4018: '<': signed/unsigned mismatch
+c:\users\tim powell\source\repos\missilecommand\missilecommand\missilecommandworld.cpp(174): warning C4018: '<': signed/unsigned mismatch
+c:\users\tim powell\source\repos\missilecommand\missilecommand\missilecommandworld.cpp(182): warning C4018: '<': signed/unsigned mismatch
+c:\users\tim powell\source\repos\missilecommand\missilecommand\missilecommandworld.cpp(190): warning C4018: '<': signed/unsigned mismatch
+c:\users\tim powell\source\repos\missilecommand\missilecommand\missilecommandworld.cpp(219): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+c:\users\tim powell\source\repos\missilecommand\missilecommand\missilecommandworld.cpp(233): warning C4018: '<': signed/unsigned mismatch
+c:\users\tim powell\source\repos\missilecommand\missilecommand\missilecommandworld.cpp(251): warning C4018: '<': signed/unsigned mismatch
+c:\users\tim powell\source\repos\missilecommand\missilecommand\missilecommandworld.cpp(265): warning C4018: '<': signed/unsigned mismatch
   MissileCommand.vcxproj -> C:\Users\Tim Powell\source\repos\MissileCommand\Debug\MissileCommand.exe

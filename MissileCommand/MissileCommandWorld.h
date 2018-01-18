@@ -45,4 +45,7 @@ protected:
 	std::mutex mExplosionsMutex;
 
 	std::shared_ptr<ResourceHolder> mResourceHolder;
+
+	double mTimeBetweenMissiles;
+	double mTimeSinceLastMissile;
 };
