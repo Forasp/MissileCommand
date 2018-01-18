@@ -14,5 +14,7 @@ public:
 	void ReadMessage(Message* _Message) { GameObject::ReadMessage(_Message); }
 	virtual void CollisionBroadcast() {};
 protected:
+	sf::Texture mRenderTexture;
 	sf::RectangleShape mRenderShape;
+	bool bDrawSprite;
 };

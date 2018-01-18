@@ -32,5 +32,5 @@ void CityObject::InitializeGameObject()
 	mRenderShape.setScale(1, 1);
 	mLayer = LAYER_GAME_STATION;
 	mSize = std::pair<double, double>(4, 4);
-	CreateCollider(&mPosition, &mSize, &mRotation);
+	//CreateCollider(&mPosition, &mSize, &mRotation);
 }

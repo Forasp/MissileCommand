@@ -8,14 +8,36 @@
 
 void ExplosionObject::RenderTick(sf::RenderWindow* _RenderWindow)
 {
-	mRenderShape.setScale(sf::Vector2f(mSize.first, mSize.second));
-	mRenderShape.setRotation(mRotation);
-	mRenderShape.setPosition(mPosition.first, mPosition.second);
-	_RenderWindow->draw(mRenderShape);
+	if (bDrawSprite)
+	{
+		mSprite.setScale((mSize.first / mSprite.getTextureRect().width) * 3.0, (mSize.second / mSprite.getTextureRect().height) * 3.0);
+		mSprite.setRotation(mRotation);
+		mSprite.setPosition(mPosition.first, mPosition.second);
+		_RenderWindow->draw(mSprite);
+	}
+	else
+	{
+		mRenderShape.setScale(sf::Vector2f(mSize.first, mSize.second));
+		mRenderShape.setRotation(mRotation);
+		mRenderShape.setPosition(mPosition.first, mPosition.second);
+		_RenderWindow->draw(mRenderShape);
+	}
 }
 
 void ExplosionObject::Tick(sf::Time _DeltaTime)
 {
+	if (!mAddedToRenderer)
+	{
+		mAddedToRenderer = true;
+		mGame->AddObjectToRenderer(this, mLayer);
+
+		if (mRenderTexture.loadFromFile("Resources\\explosions.png", sf::Rect<int>(0,0,238,238)))
+		{
+			mSprite.setTexture(mRenderTexture);
+			mSprite.setOrigin(mSprite.getTextureRect().width / 2, mSprite.getTextureRect().height / 2);
+			bDrawSprite = true;
+		}
+	}
 	GameObject::Tick(_DeltaTime);
 	mPassedTime += _DeltaTime.asSeconds();
 	
@@ -54,8 +76,6 @@ void ExplosionObject::InitializeGameObject()
 	mRenderShape.setOrigin(0.5f, 0.5f);
 	mRenderShape.setScale(1, 1);
 	mLayer = LAYER_GAME_SHIP;
-	mGame->AddObjectToRenderer(this, mLayer);
-	mAddedToRenderer = true;
 	CreateCollider(&mPosition, &mSize, &mRotation);
 	mSize = std::pair<double, double>(1, 1);
 	mPosition = mStartPosition;

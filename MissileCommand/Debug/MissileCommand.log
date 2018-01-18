@@ -1,3 +1,9 @@
 ﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(387,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (Fallen_Forever.vcxproj).  This can lead to incorrect clean and rebuild behavior.
-  Collidable.cpp
+  MissileCommandBackground.cpp
+c:\users\tim powell\source\repos\missilecommand\missilecommand\missilecommandbackground.cpp(13): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\tim powell\source\repos\missilecommand\missilecommand\missilecommandbackground.cpp(14): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\tim powell\source\repos\missilecommand\missilecommand\missilecommandbackground.cpp(15): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\tim powell\source\repos\missilecommand\missilecommand\missilecommandbackground.cpp(20): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\tim powell\source\repos\missilecommand\missilecommand\missilecommandbackground.cpp(21): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\tim powell\source\repos\missilecommand\missilecommand\missilecommandbackground.cpp(22): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
   MissileCommand.vcxproj -> C:\Users\Tim Powell\source\repos\MissileCommand\Debug\MissileCommand.exe

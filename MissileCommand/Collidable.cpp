@@ -5,9 +5,17 @@
 
 void Collidable::CheckCollision(Collidable* _Collidable)
 {
-	if (_Collidable == nullptr || mSizePtr == nullptr || mPositionPtr == nullptr || _Collidable->mSizePtr == nullptr || _Collidable->mPositionPtr == nullptr || _Collidable == this)
+
+	try
 	{
-		return;
+		if (_Collidable == nullptr || mSizePtr == nullptr || mPositionPtr == nullptr || _Collidable->mSizePtr == nullptr || _Collidable->mPositionPtr == nullptr || _Collidable == this)
+		{
+			return;
+		}
+	}
+	catch (std::string err)
+	{
+
 	}
 
 	// Ignore colliders with mismatching masks
@@ -69,7 +77,7 @@ void Collidable::ReadMessage(Message* _Message)
 				Collidable* CollidablePtr = dynamic_cast<Collidable*>(static_cast<GameObject*>(_Message->GetMessageVoidPtr()));
 				CheckCollision(CollidablePtr);
 			}
-			catch (std::string err)
+			catch (...)
 			{
 				// This try/catch is pure sin. We need to address the possibility that pointers can be deleted while they're referenced in a message.
 				// Suggestion would be to eliminate the void pointer, and implement some other identifier of an object, such as a the method we use to find assets in the original engine

@@ -22,6 +22,8 @@ public:
 	virtual void CollisionBroadcast();
 protected:
 	std::pair<double, double> mStartPosition;
+	sf::Texture mRenderTexture;
+	bool bDrawSprite;
 	sf::CircleShape mRenderShape;
 	double mPassedTime;
 	bool mEnded;
