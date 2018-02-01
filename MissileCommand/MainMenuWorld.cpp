@@ -73,7 +73,7 @@ void MainMenuWorld::Tick(sf::Time _DeltaTime)
 	// render Background
 	mBackground->Tick(_DeltaTime);
 
-	// Render Missiles outbound
+	// Render Buttons
 	mButtonsMutex.lock();
 	for (int i = 0; i < mButtons.size(); i++)
 	{

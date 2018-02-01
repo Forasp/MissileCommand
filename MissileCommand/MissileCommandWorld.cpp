@@ -10,6 +10,7 @@
 #include "MissileObject.h"
 #include "MissileCommandBackground.h"
 #include "ExplosionObject.h"
+#include "ButtonObject.h"
 
 void MissileCommandWorld::Initialize()
 {
@@ -48,7 +49,16 @@ void MissileCommandWorld::Initialize()
 	mBackground->SetPosition(sf::VideoMode::getDesktopMode().width / 2, sf::VideoMode::getDesktopMode().height / 2);
 	mBackground->SetSize(sf::VideoMode::getDesktopMode().width, sf::VideoMode::getDesktopMode().height);
 
+	std::shared_ptr<ButtonObject> QuitButton = std::make_shared<ButtonObject>(mGame, "QuitButton", "Resources\\Xbutton1.png");
+	QuitButton->SetPosition(sf::VideoMode::getDesktopMode().width * 0.95, sf::VideoMode::getDesktopMode().height * 0.05);
+	QuitButton->SetSize(sf::VideoMode::getDesktopMode().width * 0.05, sf::VideoMode::getDesktopMode().width * 0.05);
+
+	mButtonsMutex.lock();
+	mButtons.push_back(QuitButton);
+	mButtonsMutex.unlock();
+
 	AttachToMessenger(mGame->GetMessenger("MouseEvents"));
+	AttachToMessenger(mGame->GetMessenger("ButtonEvents"));
 
 	mTimeBetweenMissiles = 3.0;
 	mTimeSinceLastMissile = 0;
@@ -92,6 +102,12 @@ void MissileCommandWorld::RenderTick(sf::RenderWindow* _RenderWindow)
 	for (int i = 0; i < mExplosions.size(); i++)
 	{
 		mExplosions[i]->RenderTick(_RenderWindow);
+	}
+
+	// Render buttons
+	for (int i = 0; i < mButtons.size(); i++)
+	{
+		mButtons[i]->RenderTick(_RenderWindow);
 	}
 }
 
@@ -163,6 +179,14 @@ void MissileCommandWorld::Tick(sf::Time _DeltaTime)
 		mExplosions[i]->Tick(_DeltaTime);
 	}
 	mExplosionsMutex.unlock();
+
+	// Tick Buttons
+	mButtonsMutex.lock();
+	for (int i = 0; i < mButtons.size(); i++)
+	{
+		mButtons[i]->Tick(_DeltaTime);
+	}
+	mButtonsMutex.unlock();
 }
 
 /// <summary> 
@@ -207,6 +231,14 @@ void MissileCommandWorld::ControllerTick(sf::Time _DeltaTime)
 		mExplosions[i]->ControllerTick(_DeltaTime);
 	}
 	mExplosionsMutex.unlock();
+
+	// Tick Buttons
+	mButtonsMutex.lock();
+	for (int i = 0; i < mButtons.size(); i++)
+	{
+		mButtons[i]->ControllerTick(_DeltaTime);
+	}
+	mButtonsMutex.unlock();
 }
 
 /// <summary> 
@@ -324,6 +356,16 @@ void MissileCommandWorld::ReadMessage(Message* _Message)
 					//mGame->QueueMessage("GameEvents", std::make_unique<Message>(MESSAGE_TYPE_FULL, "FireBullet", Rotation, NormalizedUnitVector));
 				}
 			}
+		case MESSAGE_TYPE_BUTTON_EVENT:
+			if (_Message->GetMessageString().compare("QuitButton") == 0)
+			{
+				// Queue Message
+				if (mGame != nullptr)
+				{
+					mGame->QueueMessage("GlobalEvents", std::make_unique<Message>(MESSAGE_TYPE_DOUBLE, (double)RESTART_LEVEL));
+				}
+			}
+			break;
 		default:
 
 			break;

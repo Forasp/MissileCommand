@@ -8,6 +8,7 @@ class TurretObject;
 class MissileObject;
 class MissileCommandBackground;
 class ExplosionObject;
+class ButtonObject;
 
 class MissileCommandWorld : public World
 {
@@ -37,12 +38,14 @@ protected:
 	std::shared_ptr<MissileCommandBackground> mBackground;
 	std::shared_ptr<CityObject> mCities[4];
 	std::shared_ptr<TurretObject> mTurret;
+	std::vector<std::shared_ptr<ButtonObject>> mButtons;
 	std::vector<std::shared_ptr<MissileObject>> mOutboundMissiles;
 	std::vector<std::shared_ptr<MissileObject>> mInboundMissiles;
 	std::vector<std::shared_ptr<ExplosionObject>> mExplosions;
 	std::mutex mOutboundMissilesMutex;
 	std::mutex mInboundMissilesMutex;
 	std::mutex mExplosionsMutex;
+	std::mutex mButtonsMutex;
 
 	std::shared_ptr<ResourceHolder> mResourceHolder;
 

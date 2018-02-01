@@ -58,7 +58,14 @@ void Messenger::TickMessenger()
 	{
 		for (Listener* i : mListeners)
 		{
-			i->ReadMessage(mMessageQueue.front().get());
+			try
+			{
+				i->ReadMessage(mMessageQueue.front().get());
+			}
+			catch (...)
+			{
+				// TODO - Sinful, please fix 
+			}
 		}
 		
 		mMessageQueue.pop();
