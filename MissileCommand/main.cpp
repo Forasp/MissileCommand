@@ -7,7 +7,8 @@
 int main()
 {
 	// Create window instance
-	sf::RenderWindow WindowInstance(sf::VideoMode(sf::VideoMode::getDesktopMode().width, sf::VideoMode::getDesktopMode().height), "MissileCommand", sf::Style::None);
+	//sf::RenderWindow WindowInstance(sf::VideoMode(sf::VideoMode::getDesktopMode().width, sf::VideoMode::getDesktopMode().height), "MissileCommand", sf::Style::None);
+	sf::RenderWindow WindowInstance(sf::VideoMode(sf::VideoMode::getDesktopMode().width, sf::VideoMode::getDesktopMode().height), "MissileCommand", sf::Style::Default);
 	WindowInstance.setView(sf::View(sf::Vector2f(0, 0), sf::Vector2f(sf::VideoMode::getDesktopMode().width, sf::VideoMode::getDesktopMode().height)));
 	WindowInstance.setPosition(sf::Vector2i(0, 0));
 

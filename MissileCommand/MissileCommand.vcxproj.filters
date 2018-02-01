@@ -61,6 +61,15 @@
     <ClCompile Include="ExplosionObject.cpp">
       <Filter>Source\MissileCommand</Filter>
     </ClCompile>
+    <ClCompile Include="MainMenuWorld.cpp">
+      <Filter>Source\MissileCommand</Filter>
+    </ClCompile>
+    <ClCompile Include="ButtonObject.cpp">
+      <Filter>Source\MissileCommand</Filter>
+    </ClCompile>
+    <ClCompile Include="MainMenuBackgroundObject.cpp">
+      <Filter>Source\MissileCommand</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CityObject.h">
@@ -127,6 +136,15 @@
       <Filter>Include\MissileCommand</Filter>
     </ClInclude>
     <ClInclude Include="MissileCommandBackground.h">
+      <Filter>Include\MissileCommand</Filter>
+    </ClInclude>
+    <ClInclude Include="MainMenuWorld.h">
+      <Filter>Include\MissileCommand</Filter>
+    </ClInclude>
+    <ClInclude Include="ButtonObject.h">
+      <Filter>Include\MissileCommand</Filter>
+    </ClInclude>
+    <ClInclude Include="MainMenuBackgroundObject.h">
       <Filter>Include\MissileCommand</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,22 +1,16 @@
 ﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(387,5): warning MSB8028: The intermediate directory (Release\) contains files shared from another project (Fallen_Forever.vcxproj).  This can lead to incorrect clean and rebuild behavior.
-  MissileCommandWorld.cpp
-MissileCommandWorld.cpp(65): warning C4018: '<': signed/unsigned mismatch
-MissileCommandWorld.cpp(71): warning C4018: '<': signed/unsigned mismatch
-MissileCommandWorld.cpp(77): warning C4018: '<': signed/unsigned mismatch
-MissileCommandWorld.cpp(130): warning C4018: '<': signed/unsigned mismatch
-MissileCommandWorld.cpp(138): warning C4018: '<': signed/unsigned mismatch
-MissileCommandWorld.cpp(146): warning C4018: '<': signed/unsigned mismatch
-MissileCommandWorld.cpp(174): warning C4018: '<': signed/unsigned mismatch
-MissileCommandWorld.cpp(182): warning C4018: '<': signed/unsigned mismatch
-MissileCommandWorld.cpp(190): warning C4018: '<': signed/unsigned mismatch
-MissileCommandWorld.cpp(219): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-MissileCommandWorld.cpp(233): warning C4018: '<': signed/unsigned mismatch
-MissileCommandWorld.cpp(251): warning C4018: '<': signed/unsigned mismatch
-MissileCommandWorld.cpp(270): warning C4018: '<': signed/unsigned mismatch
+  ButtonObject.cpp
+ButtonObject.cpp(12): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+ButtonObject.cpp(13): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+ButtonObject.cpp(14): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+ButtonObject.cpp(19): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+ButtonObject.cpp(20): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+ButtonObject.cpp(21): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+ButtonObject.cpp(36): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
      Creating library C:\Users\Tim Powell\source\repos\MissileCommand\Release\MissileCommand.lib and object C:\Users\Tim Powell\source\repos\MissileCommand\Release\MissileCommand.exp
   Generating code
-  3 of 1482 functions ( 0.2%) were compiled, the rest were copied from previous compilation.
+  2 of 1635 functions ( 0.1%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    52 functions had inline decision re-evaluated but remain unchanged
+    11 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   MissileCommand.vcxproj -> C:\Users\Tim Powell\source\repos\MissileCommand\Release\MissileCommand.exe
