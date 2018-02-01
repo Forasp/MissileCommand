@@ -16,5 +16,9 @@ public:
 	virtual void CollisionBroadcast() {};
 
 protected:
+	sf::Texture mRenderTexture;
+	bool bDrawSprite;
 	sf::RectangleShape mRenderShape;
+	std::string mIdentity;
+	std::string mResourceLocation;
 };

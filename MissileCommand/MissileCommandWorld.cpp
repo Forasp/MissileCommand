@@ -19,8 +19,23 @@ void MissileCommandWorld::Initialize()
 	for (int i = 0; i < 4; i++)
 	{
 		mCities[i] = std::make_shared<CityObject>(CityObject(mGame));;
-		mCities[i]->SetPosition((sf::VideoMode::getDesktopMode().width / 5 * (i + 1)), sf::VideoMode::getDesktopMode().height / 10*8);
-		mCities[i]->SetSize(sf::VideoMode::getDesktopMode().width / 10, sf::VideoMode::getDesktopMode().height / 10);
+		switch (i)
+		{
+		case 0:
+			mCities[i]->SetPosition((sf::VideoMode::getDesktopMode().width * 0.1), sf::VideoMode::getDesktopMode().height / 10 * 8);
+			break;
+		case 1:
+			mCities[i]->SetPosition((sf::VideoMode::getDesktopMode().width * 0.3), sf::VideoMode::getDesktopMode().height / 10 * 8);
+			break;
+		case 2:
+			mCities[i]->SetPosition((sf::VideoMode::getDesktopMode().width * 0.7), sf::VideoMode::getDesktopMode().height / 10 * 8);
+			break;
+		case 3:
+			mCities[i]->SetPosition((sf::VideoMode::getDesktopMode().width * 0.9), sf::VideoMode::getDesktopMode().height / 10 * 8);
+			break;
+		}
+
+		mCities[i]->SetSize(sf::VideoMode::getDesktopMode().width / 6, sf::VideoMode::getDesktopMode().height / 6);
 	}
 	
 	mTurret = std::move(std::make_shared<TurretObject>(TurretObject(mGame)));
