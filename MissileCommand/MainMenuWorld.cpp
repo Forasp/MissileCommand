@@ -22,6 +22,14 @@ void MainMenuWorld::Initialize()
 	mButtons.push_back(StartButton);
 	mButtonsMutex.unlock();
 
+	std::shared_ptr<ButtonObject> QuitButton = std::make_shared<ButtonObject>(mGame, "QuitButton", "Resources\\Xbutton1.png");
+	QuitButton->SetPosition(sf::VideoMode::getDesktopMode().width * 0.95, sf::VideoMode::getDesktopMode().height * 0.05);
+	QuitButton->SetSize(sf::VideoMode::getDesktopMode().width * 0.05, sf::VideoMode::getDesktopMode().width * 0.05);
+
+	mButtonsMutex.lock();
+	mButtons.push_back(QuitButton);
+	mButtonsMutex.unlock();
+
 	// Position assets
 
 	//mTurret->SetPosition(sf::VideoMode::getDesktopMode().width / 2, sf::VideoMode::getDesktopMode().height / 10 * 9);
@@ -133,6 +141,14 @@ void MainMenuWorld::ReadMessage(Message* _Message)
 			if (mGame != nullptr)
 			{
 				mGame->QueueMessage("GlobalEvents", std::make_unique<Message>(MESSAGE_TYPE_FULL, std::string("BeginGame")));
+			}
+		}
+		if (_Message->GetMessageString().compare("QuitButton") == 0)
+		{
+			// Queue Message
+			if (mGame != nullptr)
+			{
+				mGame->QueueMessage("GlobalEvents", std::make_unique<Message>(MESSAGE_TYPE_QUIT, std::string("Escape key pressed.")));
 			}
 		}
 		break;

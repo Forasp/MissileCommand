@@ -1,22 +1,13 @@
 ﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(387,5): warning MSB8028: The intermediate directory (Release\) contains files shared from another project (Fallen_Forever.vcxproj).  This can lead to incorrect clean and rebuild behavior.
-  MissileCommandWorld.cpp
-MissileCommandWorld.cpp(80): warning C4018: '<': signed/unsigned mismatch
-MissileCommandWorld.cpp(86): warning C4018: '<': signed/unsigned mismatch
-MissileCommandWorld.cpp(92): warning C4018: '<': signed/unsigned mismatch
-MissileCommandWorld.cpp(145): warning C4018: '<': signed/unsigned mismatch
-MissileCommandWorld.cpp(153): warning C4018: '<': signed/unsigned mismatch
-MissileCommandWorld.cpp(161): warning C4018: '<': signed/unsigned mismatch
-MissileCommandWorld.cpp(189): warning C4018: '<': signed/unsigned mismatch
-MissileCommandWorld.cpp(197): warning C4018: '<': signed/unsigned mismatch
-MissileCommandWorld.cpp(205): warning C4018: '<': signed/unsigned mismatch
-MissileCommandWorld.cpp(234): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
-MissileCommandWorld.cpp(248): warning C4018: '<': signed/unsigned mismatch
-MissileCommandWorld.cpp(266): warning C4018: '<': signed/unsigned mismatch
-MissileCommandWorld.cpp(285): warning C4018: '<': signed/unsigned mismatch
+  MainMenuWorld.cpp
+MainMenuWorld.cpp(62): warning C4018: '<': signed/unsigned mismatch
+MainMenuWorld.cpp(78): warning C4018: '<': signed/unsigned mismatch
+MainMenuWorld.cpp(97): warning C4018: '<': signed/unsigned mismatch
+MainMenuWorld.cpp(126): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
      Creating library C:\Users\Tim Powell\source\repos\MissileCommand\Release\MissileCommand.lib and object C:\Users\Tim Powell\source\repos\MissileCommand\Release\MissileCommand.exp
   Generating code
-  5 of 1637 functions ( 0.3%) were compiled, the rest were copied from previous compilation.
+  1 of 1641 functions ( 0.1%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    3 functions had inline decision re-evaluated but remain unchanged
+    30 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   MissileCommand.vcxproj -> C:\Users\Tim Powell\source\repos\MissileCommand\Release\MissileCommand.exe
