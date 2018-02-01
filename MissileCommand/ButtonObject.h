@@ -5,7 +5,7 @@
 class ButtonObject : public GameObject
 {
 public:
-	ButtonObject(Game* _Game, std::string _Identity, GameObject* _Parent = nullptr) : mIdentity(_Identity), GameObject(_Game, _Parent)
+	ButtonObject(Game* _Game, std::string _Identity, std::string _ResourceLocation, GameObject* _Parent = nullptr) : mIdentity(_Identity), mResourceLocation(_ResourceLocation), GameObject(_Game, _Parent)
 	{
 		InitializeGameObject();
 	}
@@ -20,4 +20,5 @@ protected:
 	bool bDrawSprite;
 	sf::RectangleShape mRenderShape;
 	std::string mIdentity;
+	std::string mResourceLocation;
 };

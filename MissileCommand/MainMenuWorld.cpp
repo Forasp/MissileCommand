@@ -14,8 +14,8 @@ void MainMenuWorld::Initialize()
 	// Construct our world here.
 	mBackground = std::make_shared<MainMenuBackgroundObject>(MainMenuBackgroundObject(mGame));
 
-	std::shared_ptr<ButtonObject> StartButton = std::make_shared<ButtonObject>(mGame, "StartButton");
-	StartButton->SetPosition(sf::VideoMode::getDesktopMode().width / 2, sf::VideoMode::getDesktopMode().height / 10 * 9);
+	std::shared_ptr<ButtonObject> StartButton = std::make_shared<ButtonObject>(mGame, "StartButton", "Resources\\Start_button.png");
+	StartButton->SetPosition(sf::VideoMode::getDesktopMode().width / 5 * 4, sf::VideoMode::getDesktopMode().height / 10 * 8.5);
 	StartButton->SetSize(sf::VideoMode::getDesktopMode().width / 4, sf::VideoMode::getDesktopMode().width / 15);
 
 	mButtonsMutex.lock();

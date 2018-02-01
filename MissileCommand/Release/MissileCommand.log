@@ -1,16 +1,13 @@
 ﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(387,5): warning MSB8028: The intermediate directory (Release\) contains files shared from another project (Fallen_Forever.vcxproj).  This can lead to incorrect clean and rebuild behavior.
-  ButtonObject.cpp
-ButtonObject.cpp(12): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-ButtonObject.cpp(13): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-ButtonObject.cpp(14): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-ButtonObject.cpp(19): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-ButtonObject.cpp(20): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-ButtonObject.cpp(21): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-ButtonObject.cpp(36): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  MainMenuWorld.cpp
+MainMenuWorld.cpp(54): warning C4018: '<': signed/unsigned mismatch
+MainMenuWorld.cpp(70): warning C4018: '<': signed/unsigned mismatch
+MainMenuWorld.cpp(89): warning C4018: '<': signed/unsigned mismatch
+MainMenuWorld.cpp(118): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
      Creating library C:\Users\Tim Powell\source\repos\MissileCommand\Release\MissileCommand.lib and object C:\Users\Tim Powell\source\repos\MissileCommand\Release\MissileCommand.exp
   Generating code
-  2 of 1635 functions ( 0.1%) were compiled, the rest were copied from previous compilation.
+  5 of 1636 functions ( 0.3%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    11 functions had inline decision re-evaluated but remain unchanged
+    0 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   MissileCommand.vcxproj -> C:\Users\Tim Powell\source\repos\MissileCommand\Release\MissileCommand.exe

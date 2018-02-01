@@ -9,7 +9,7 @@ void ButtonObject::RenderTick(sf::RenderWindow* _RenderWindow)
 {
 	if (bDrawSprite)
 	{
-		mSprite.setScale((mSize.first / mSprite.getTextureRect().width) * 3.0, (mSize.second / mSprite.getTextureRect().height) * 3.0);
+		mSprite.setScale((mSize.first / mSprite.getTextureRect().width), (mSize.second / mSprite.getTextureRect().height));
 		mSprite.setRotation(mRotation);
 		mSprite.setPosition(mPosition.first, mPosition.second);
 		_RenderWindow->draw(mSprite);
@@ -30,7 +30,7 @@ void ButtonObject::Tick(sf::Time _DeltaTime)
 		mAddedToRenderer = true;
 		mGame->AddObjectToRenderer(this, mLayer);
 
-		if (mRenderTexture.loadFromFile("Resources\\button.png", sf::Rect<int>(0, 0, 238, 238)))
+		if (mRenderTexture.loadFromFile(mResourceLocation))
 		{
 			mSprite.setTexture(mRenderTexture);
 			mSprite.setOrigin(mSprite.getTextureRect().width / 2, mSprite.getTextureRect().height / 2);
