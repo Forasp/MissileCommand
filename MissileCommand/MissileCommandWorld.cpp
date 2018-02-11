@@ -19,7 +19,8 @@ void MissileCommandWorld::Initialize()
 	
 	for (int i = 0; i < 4; i++)
 	{
-		mCities[i] = std::make_shared<CityObject>(CityObject(mGame));;
+		mCityStates[i] = 2;
+		mCities[i] = std::make_shared<CityObject>(CityObject(mGame, i));;
 		switch (i)
 		{
 		case 0:
@@ -136,7 +137,7 @@ void MissileCommandWorld::Tick(sf::Time _DeltaTime)
 		NormalizedUnitVector.second = (ObjectPosition.second - DestPosition.second) / TotalDistance;
 
 		double Rotation = atan2(NormalizedUnitVector.second, NormalizedUnitVector.first) * 180.0 / 3.141592;
-		std::shared_ptr<MissileObject> NewMissile = std::make_shared<MissileObject>(mGame, mTimeBetweenMissiles * 2.0, ObjectPosition, DestPosition);
+		std::shared_ptr<MissileObject> NewMissile = std::make_shared<MissileObject>(mGame, mTimeBetweenMissiles * 2.0, ObjectPosition, DestPosition, true, IndexOfCity);
 		NewMissile->mCollisionLayerMask = COLLISION_LAYER_1;
 		NewMissile->SetRotation(Rotation);
 		mInboundMissilesMutex.lock();
@@ -274,6 +275,24 @@ void MissileCommandWorld::ReadMessage(Message* _Message)
 		case MESSAGE_TYPE_STRING:
 
 			break;
+		case MESSAGE_TYPE_CITY_STATE:
+			{
+				mCityStates[(int)_Message->GetMessageDoublePair().first] = _Message->GetMessageDoublePair().second;
+				bool CityStillAlive = false;
+				for (int i = 0; i < 4; i++)
+				{
+					if (mCityStates[i] > 0)
+					{
+						CityStillAlive = true;
+					}
+				}
+
+				if (!CityStillAlive)
+				{
+					mGame->QueueMessage("GlobalEvents", std::make_unique<Message>(MESSAGE_TYPE_DOUBLE, (double)RESTART_LEVEL));
+				}
+			}
+			break;
 		case MESSAGE_TYPE_COLLISION_EVENT:
 			if (_Message->GetMessageDouble() == EXPLODE_MISSILE)
 			{
@@ -343,7 +362,7 @@ void MissileCommandWorld::ReadMessage(Message* _Message)
 				NormalizedUnitVector.second = (ObjectPosition->second - MousePosition->second) / TotalDistance;
 
 				double Rotation = atan2(NormalizedUnitVector.second, NormalizedUnitVector.first) * 180.0 / 3.141592;
-				std::shared_ptr<MissileObject> NewMissile = std::make_shared<MissileObject>(mGame, 0.5, *ObjectPosition, *MousePosition);
+				std::shared_ptr<MissileObject> NewMissile = std::make_shared<MissileObject>(mGame, 0.5, *ObjectPosition, *MousePosition, false);
 				NewMissile->mCollisionLayerMask = COLLISION_LAYER_1;
 				NewMissile->SetRotation(Rotation);
 				mOutboundMissilesMutex.lock();

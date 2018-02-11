@@ -37,6 +37,7 @@ void MainMenuBackgroundObject::Tick(sf::Time _DeltaTime)
 
 		if (mRenderTexture.loadFromFile("Resources\\mainmenu.png"))
 		{
+			mRenderTexture.setSmooth(true);
 			mSprite.setTexture(mRenderTexture);
 			mSprite.setOrigin(mSprite.getTextureRect().width / 2, mSprite.getTextureRect().height / 2);
 			bDrawSprite = true;

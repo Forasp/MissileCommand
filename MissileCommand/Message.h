@@ -12,6 +12,8 @@
 #define MESSAGE_TYPE_COLLISION_PTR		8
 #define MESSAGE_TYPE_COLLISION_EVENT 9
 #define MESSAGE_TYPE_BUTTON_EVENT		10
+#define MESSAGE_TYPE_CITY_DESTRUCTION	11
+#define MESSAGE_TYPE_CITY_STATE			12
 
 #define COLLISION_WITH_SELF 1
 #define RESTART_LEVEL 2
@@ -88,14 +90,14 @@ public:
 		mConsumable = _Consumable;
 	}
 
-	int GetMessageType() { return mMessageType; }
-	int GetMessageInt() { return mMessageInt; }
-	double GetMessageDouble() { return mMessageDouble; }
-	std::pair<double, double> GetMessageDoublePair() { return mMessageDoublePair; }
-	std::string GetMessageString() { return mMessageString; }
+	int GetMessageType() { if (!mConsumed) { return mMessageType; } return NULL; }
+	int GetMessageInt() { if (!mConsumed) { return mMessageInt; } return NULL; }
+	double GetMessageDouble() { if (!mConsumed) { return mMessageDouble; } return NULL; }
+	std::pair<double, double> GetMessageDoublePair() { if (!mConsumed) { return mMessageDoublePair; } return std::pair<double, double>(NULL, NULL); }
+	std::string GetMessageString() { if (!mConsumed) { return mMessageString; } return NULL; }
 
 	// New, not fully tested. 
-	void* GetMessageVoidPtr() { return mMessageVoidPtr; }
+	void* GetMessageVoidPtr() { if (!mConsumed) { return mMessageVoidPtr; } return NULL; }
 
 protected:
 	bool mConsumed;

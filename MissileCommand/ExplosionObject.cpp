@@ -33,6 +33,7 @@ void ExplosionObject::Tick(sf::Time _DeltaTime)
 
 		if (mRenderTexture.loadFromFile("Resources\\explosions.png", sf::Rect<int>(0,0,238,238)))
 		{
+			mRenderTexture.setSmooth(true);
 			mSprite.setTexture(mRenderTexture);
 			mSprite.setOrigin(mSprite.getTextureRect().width / 2, mSprite.getTextureRect().height / 2);
 			bDrawSprite = true;

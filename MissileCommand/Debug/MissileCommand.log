@@ -1,7 +1,100 @@
 ﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(387,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (Fallen_Forever.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  TurretObject.cpp
+c:\users\tim powell\source\repos\missilecommand\missilecommand\turretobject.cpp(13): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\tim powell\source\repos\missilecommand\missilecommand\turretobject.cpp(14): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\tim powell\source\repos\missilecommand\missilecommand\turretobject.cpp(15): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\tim powell\source\repos\missilecommand\missilecommand\turretobject.cpp(20): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\tim powell\source\repos\missilecommand\missilecommand\turretobject.cpp(21): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\tim powell\source\repos\missilecommand\missilecommand\turretobject.cpp(22): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\tim powell\source\repos\missilecommand\missilecommand\turretobject.cpp(39): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  MissileObject.cpp
+c:\users\tim powell\source\repos\missilecommand\missilecommand\missileobject.cpp(13): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\tim powell\source\repos\missilecommand\missilecommand\missileobject.cpp(14): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\tim powell\source\repos\missilecommand\missilecommand\missileobject.cpp(15): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\tim powell\source\repos\missilecommand\missilecommand\missileobject.cpp(20): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\tim powell\source\repos\missilecommand\missilecommand\missileobject.cpp(21): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\tim powell\source\repos\missilecommand\missilecommand\missileobject.cpp(22): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\tim powell\source\repos\missilecommand\missilecommand\missileobject.cpp(39): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  MissileCommandWorld.cpp
+c:\users\tim powell\source\repos\missilecommand\missilecommand\missilecommandworld.cpp(91): warning C4018: '<': signed/unsigned mismatch
+c:\users\tim powell\source\repos\missilecommand\missilecommand\missilecommandworld.cpp(97): warning C4018: '<': signed/unsigned mismatch
+c:\users\tim powell\source\repos\missilecommand\missilecommand\missilecommandworld.cpp(103): warning C4018: '<': signed/unsigned mismatch
+c:\users\tim powell\source\repos\missilecommand\missilecommand\missilecommandworld.cpp(109): warning C4018: '<': signed/unsigned mismatch
+c:\users\tim powell\source\repos\missilecommand\missilecommand\missilecommandworld.cpp(162): warning C4018: '<': signed/unsigned mismatch
+c:\users\tim powell\source\repos\missilecommand\missilecommand\missilecommandworld.cpp(170): warning C4018: '<': signed/unsigned mismatch
+c:\users\tim powell\source\repos\missilecommand\missilecommand\missilecommandworld.cpp(178): warning C4018: '<': signed/unsigned mismatch
+c:\users\tim powell\source\repos\missilecommand\missilecommand\missilecommandworld.cpp(186): warning C4018: '<': signed/unsigned mismatch
+c:\users\tim powell\source\repos\missilecommand\missilecommand\missilecommandworld.cpp(214): warning C4018: '<': signed/unsigned mismatch
+c:\users\tim powell\source\repos\missilecommand\missilecommand\missilecommandworld.cpp(222): warning C4018: '<': signed/unsigned mismatch
+c:\users\tim powell\source\repos\missilecommand\missilecommand\missilecommandworld.cpp(230): warning C4018: '<': signed/unsigned mismatch
+c:\users\tim powell\source\repos\missilecommand\missilecommand\missilecommandworld.cpp(238): warning C4018: '<': signed/unsigned mismatch
+c:\users\tim powell\source\repos\missilecommand\missilecommand\missilecommandworld.cpp(267): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+c:\users\tim powell\source\repos\missilecommand\missilecommand\missilecommandworld.cpp(280): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+c:\users\tim powell\source\repos\missilecommand\missilecommand\missilecommandworld.cpp(299): warning C4018: '<': signed/unsigned mismatch
+c:\users\tim powell\source\repos\missilecommand\missilecommand\missilecommandworld.cpp(317): warning C4018: '<': signed/unsigned mismatch
+c:\users\tim powell\source\repos\missilecommand\missilecommand\missilecommandworld.cpp(336): warning C4018: '<': signed/unsigned mismatch
+  MissileCommandBackground.cpp
+c:\users\tim powell\source\repos\missilecommand\missilecommand\missilecommandbackground.cpp(14): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\tim powell\source\repos\missilecommand\missilecommand\missilecommandbackground.cpp(15): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\tim powell\source\repos\missilecommand\missilecommand\missilecommandbackground.cpp(16): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\tim powell\source\repos\missilecommand\missilecommand\missilecommandbackground.cpp(21): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\tim powell\source\repos\missilecommand\missilecommand\missilecommandbackground.cpp(22): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\tim powell\source\repos\missilecommand\missilecommand\missilecommandbackground.cpp(23): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\tim powell\source\repos\missilecommand\missilecommand\missilecommandbackground.cpp(44): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   MainMenuWorld.cpp
-c:\users\tim powell\source\repos\missilecommand\missilecommand\mainmenuworld.cpp(54): warning C4018: '<': signed/unsigned mismatch
-c:\users\tim powell\source\repos\missilecommand\missilecommand\mainmenuworld.cpp(70): warning C4018: '<': signed/unsigned mismatch
-c:\users\tim powell\source\repos\missilecommand\missilecommand\mainmenuworld.cpp(89): warning C4018: '<': signed/unsigned mismatch
-c:\users\tim powell\source\repos\missilecommand\missilecommand\mainmenuworld.cpp(118): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+c:\users\tim powell\source\repos\missilecommand\missilecommand\mainmenuworld.cpp(62): warning C4018: '<': signed/unsigned mismatch
+c:\users\tim powell\source\repos\missilecommand\missilecommand\mainmenuworld.cpp(78): warning C4018: '<': signed/unsigned mismatch
+c:\users\tim powell\source\repos\missilecommand\missilecommand\mainmenuworld.cpp(97): warning C4018: '<': signed/unsigned mismatch
+c:\users\tim powell\source\repos\missilecommand\missilecommand\mainmenuworld.cpp(126): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+  MainMenuBackgroundObject.cpp
+c:\users\tim powell\source\repos\missilecommand\missilecommand\mainmenubackgroundobject.cpp(12): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\tim powell\source\repos\missilecommand\missilecommand\mainmenubackgroundobject.cpp(13): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\tim powell\source\repos\missilecommand\missilecommand\mainmenubackgroundobject.cpp(14): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\tim powell\source\repos\missilecommand\missilecommand\mainmenubackgroundobject.cpp(19): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\tim powell\source\repos\missilecommand\missilecommand\mainmenubackgroundobject.cpp(20): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\tim powell\source\repos\missilecommand\missilecommand\mainmenubackgroundobject.cpp(21): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\tim powell\source\repos\missilecommand\missilecommand\mainmenubackgroundobject.cpp(42): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  ExplosionObject.cpp
+c:\users\tim powell\source\repos\missilecommand\missilecommand\explosionobject.cpp(13): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\tim powell\source\repos\missilecommand\missilecommand\explosionobject.cpp(14): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\tim powell\source\repos\missilecommand\missilecommand\explosionobject.cpp(15): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\tim powell\source\repos\missilecommand\missilecommand\explosionobject.cpp(20): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\tim powell\source\repos\missilecommand\missilecommand\explosionobject.cpp(21): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\tim powell\source\repos\missilecommand\missilecommand\explosionobject.cpp(22): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\tim powell\source\repos\missilecommand\missilecommand\explosionobject.cpp(38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  CityObject.cpp
+c:\users\tim powell\source\repos\missilecommand\missilecommand\cityobject.cpp(13): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\tim powell\source\repos\missilecommand\missilecommand\cityobject.cpp(14): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\tim powell\source\repos\missilecommand\missilecommand\cityobject.cpp(15): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\tim powell\source\repos\missilecommand\missilecommand\cityobject.cpp(20): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\tim powell\source\repos\missilecommand\missilecommand\cityobject.cpp(21): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\tim powell\source\repos\missilecommand\missilecommand\cityobject.cpp(22): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\tim powell\source\repos\missilecommand\missilecommand\cityobject.cpp(38): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  ButtonObject.cpp
+c:\users\tim powell\source\repos\missilecommand\missilecommand\buttonobject.cpp(12): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\tim powell\source\repos\missilecommand\missilecommand\buttonobject.cpp(13): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\tim powell\source\repos\missilecommand\missilecommand\buttonobject.cpp(14): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\tim powell\source\repos\missilecommand\missilecommand\buttonobject.cpp(19): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\tim powell\source\repos\missilecommand\missilecommand\buttonobject.cpp(20): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\tim powell\source\repos\missilecommand\missilecommand\buttonobject.cpp(21): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+c:\users\tim powell\source\repos\missilecommand\missilecommand\buttonobject.cpp(37): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Generating Code...
+  Compiling...
+  main.cpp
+c:\users\tim powell\source\repos\missilecommand\missilecommand\main.cpp(12): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+c:\users\tim powell\source\repos\missilecommand\missilecommand\main.cpp(16): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+  World.cpp
+c:\users\tim powell\source\repos\missilecommand\missilecommand\world.cpp(70): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+  MissileCommandGame.cpp
+c:\users\tim powell\source\repos\missilecommand\missilecommand\missilecommandgame.cpp(32): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+  Messenger.cpp
+  GameThreadUnsafeScope.cpp
+  GameObject.cpp
+c:\users\tim powell\source\repos\missilecommand\missilecommand\gameobject.cpp(72): warning C4018: '<': signed/unsigned mismatch
+  Game.cpp
+c:\users\tim powell\source\repos\missilecommand\missilecommand\game.cpp(234): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+  Collidable.cpp
+  Generating Code...
+     Creating library C:\Users\Tim Powell\source\repos\MissileCommand\Debug\MissileCommand.lib and object C:\Users\Tim Powell\source\repos\MissileCommand\Debug\MissileCommand.exp
+sfml-main-d.lib(MainWin32.obj) : warning LNK4099: PDB 'sfml-main.pdb' was not found with 'sfml-main-d.lib(MainWin32.obj)' or at 'C:\Users\Tim Powell\source\repos\MissileCommand\Debug\sfml-main.pdb'; linking object as if no debug info
   MissileCommand.vcxproj -> C:\Users\Tim Powell\source\repos\MissileCommand\Debug\MissileCommand.exe

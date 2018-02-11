@@ -32,6 +32,7 @@ void ButtonObject::Tick(sf::Time _DeltaTime)
 
 		if (mRenderTexture.loadFromFile(mResourceLocation))
 		{
+			mRenderTexture.setSmooth(true);
 			mSprite.setTexture(mRenderTexture);
 			mSprite.setOrigin(mSprite.getTextureRect().width / 2, mSprite.getTextureRect().height / 2);
 			bDrawSprite = true;

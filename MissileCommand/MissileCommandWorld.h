@@ -51,4 +51,5 @@ protected:
 
 	double mTimeBetweenMissiles;
 	double mTimeSinceLastMissile;
+	int mCityStates[4];
 };

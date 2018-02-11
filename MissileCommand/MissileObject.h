@@ -9,8 +9,10 @@ public:
 	MissileObject(Game* _Game, 
 				  double _TravelTime,
 			      std::pair<double, double> _StartPosition, 
-				  std::pair<double,double> _EndPosition,
-				  GameObject* _Parent = nullptr) : GameObject(_Game, _Parent), mStartPosition(_StartPosition), mEndPosition(_EndPosition), mTravelTime(_TravelTime) { InitializeGameObject(); }
+				  std::pair<double,double> _EndPosition, 
+				  bool _EnemyMissile,
+				  int _TargetCity = -1,
+				  GameObject* _Parent = nullptr) : GameObject(_Game, _Parent), mIsEnemyMissile(_EnemyMissile), mTargetCity(_TargetCity), mStartPosition(_StartPosition), mEndPosition(_EndPosition), mTravelTime(_TravelTime) { InitializeGameObject(); }
 	void RenderTick(sf::RenderWindow* _RenderWindow);
 	void Collide(Collidable* _Collidable);
 	void InitializeGameObject();
@@ -20,8 +22,12 @@ public:
 	virtual void CollisionBroadcast();
 protected:
 	sf::RectangleShape mRenderShape;
+	sf::Texture mRenderTexture;
+	bool bDrawSprite;
+	bool mIsEnemyMissile;
 	std::pair<double, double> mStartPosition;
 	std::pair<double, double> mEndPosition;
 	double mTravelTime;
-
+	int mTargetCity;
+	bool mEnded;
 };
